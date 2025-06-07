@@ -28,8 +28,8 @@ const projects = [
   {
     title: "تطبيق إدارة مهام",
     description: "تطبيق لإدارة وتنظيم المهام والمشاريع.",
-    image: "/src/assets/pokedex-responsive.png",
-    url: image4,
+    image: image4,
+    url: "https://your-task-app.com",
     category: "تطبيق",
   },
 ];
