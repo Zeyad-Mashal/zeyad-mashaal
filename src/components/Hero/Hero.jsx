@@ -1,5 +1,5 @@
 import React from "react";
-
+import earth from "../../assets/earth.mp4";
 const Hero = () => {
   return (
     <section
@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="relative max-w-7xl mx-auto flex flex-col-reverse md:flex-row-reverse items-center justify-between gap-16">
         <div className="w-full md:w-1/2 flex justify-center">
           <video
-            src="/src/assets/earth.mp4"
+            src={earth}
             alt="تطوير التطبيقات والمواقع"
             loop
             autoPlay
