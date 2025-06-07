@@ -29,6 +29,8 @@ const Hero = () => {
             loop
             autoPlay
             muted
+            playsInline
+            preload="auto"
             className="max-w-full h-auto object-cover md:object-contain border-none"
           />
         </div>
