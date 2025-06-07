@@ -58,7 +58,7 @@ const Portfolio = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full border transition duration-300 text-sm font-medium ${
+              className={`px-4 py-2 rounded-full border transition duration-300 text-base font-medium ${
                 activeCategory === cat
                   ? "bg-blue-600 text-white border-blue-600"
                   : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"
@@ -80,6 +80,7 @@ const Portfolio = () => {
                 src={project.image}
                 alt={project.title}
                 className="w-full h-48 object-cover"
+                loading="lazy"
               />
               <div className="p-5 text-right">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">

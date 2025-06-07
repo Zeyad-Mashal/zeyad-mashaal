@@ -1,5 +1,6 @@
 import React from "react";
 import earth from "../../assets/earth.mp4";
+
 const Hero = () => {
   return (
     <section
@@ -20,7 +21,7 @@ const Hero = () => {
         </svg>
       </div>
 
-      <div className="relative max-w-7xl mx-auto flex flex-col-reverse md:flex-row-reverse items-center justify-between gap-16">
+      <div className="relative max-w-7xl mx-auto flex flex-col-reverse md:flex-row-reverse items-center justify-center md:justify-between gap-16">
         <div className="w-full md:w-1/2 flex justify-center">
           <video
             src={earth}
@@ -32,11 +33,11 @@ const Hero = () => {
           />
         </div>
 
-        <div className="w-full md:w-1/2 text-right">
+        <div className="w-full md:w-1/2 text-center md:text-right">
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-wide mb-8 drop-shadow-lg">
             كل الحلول البرمجية في مكان واحد
           </h1>
-          <p className="text-black text-xl max-w-lg mb-12 leading-relaxed">
+          <p className="text-black text-xl max-w-lg mb-12 leading-relaxed mx-auto md:mx-0">
             نصمم ونطور تطبيقات الهاتف والمواقع الإلكترونية باحترافية لتناسب
             احتياجاتك التجارية، من البداية حتى الإطلاق.
           </p>
