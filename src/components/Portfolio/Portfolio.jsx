@@ -1,24 +1,27 @@
 import React, { useState } from "react";
-
+import image1 from "../../assets/mira4k.png";
+import image2 from "../../assets/mockup.png";
+import image3 from "../../assets/mymind-responsive.png";
+import image4 from "../../assets/pokedex-responsive.png";
 const projects = [
   {
     title: "متجر إلكتروني احترافي",
     description: "منصة بيع منتجات كاملة مع بوابة دفع.",
-    image: "/src/assets/mira4k.png",
+    image: image1,
     url: "https://your-store-link.com",
     category: "موقع",
   },
   {
     title: "تطبيق خدمات",
     description: "تطبيق حجز خدمات مع إشعارات ولوحة تحكم.",
-    image: "/src/assets/mockup.png",
+    image: image2,
     url: "https://your-app-link.com",
     category: "تطبيق",
   },
   {
     title: "موقع بورتفوليو شخصي",
     description: "عرض الأعمال والسيرة الذاتية بشكل أنيق.",
-    image: "/src/assets/mymind-responsive.png",
+    image: image3,
     url: "https://your-portfolio-link.com",
     category: "موقع",
   },
@@ -26,7 +29,7 @@ const projects = [
     title: "تطبيق إدارة مهام",
     description: "تطبيق لإدارة وتنظيم المهام والمشاريع.",
     image: "/src/assets/pokedex-responsive.png",
-    url: "https://your-task-app.com",
+    url: image4,
     category: "تطبيق",
   },
 ];
