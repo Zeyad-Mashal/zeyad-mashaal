@@ -44,6 +44,7 @@ const ContactUs = () => {
     <section
       className="relative bg-gradient-to-r from-blue-50 to-white py-16 px-6 md:px-12"
       dir="rtl"
+      id="contact"
     >
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-10 md:p-14">
         <h2 className="text-4xl font-extrabold text-gray-900 mb-10 text-center">
@@ -100,8 +101,7 @@ const ContactUs = () => {
             />
           </div>
 
-          {/* اختيار الباقة */}
-          <div className="flex items-center border border-gray-300 rounded-lg px-4 py-3 focus-within:ring-2 focus-within:ring-blue-500 transition">
+          {/* <div className="flex items-center border border-gray-300 rounded-lg px-4 py-3 focus-within:ring-2 focus-within:ring-blue-500 transition">
             <FaClipboardList className="text-blue-600 ml-3 text-xl" />
             <select
               name="plan"
@@ -119,6 +119,26 @@ const ContactUs = () => {
                 </option>
               ))}
             </select>
+          </div> */}
+
+          {/* اختيار الباقة باستخدام datalist */}
+          <div className="flex items-center border border-gray-300 rounded-lg px-4 py-3 focus-within:ring-2 focus-within:ring-blue-500 transition">
+            <FaClipboardList className="text-blue-600 ml-3 text-xl" />
+            <input
+              type="text"
+              name="plan"
+              list="plans"
+              value={formData.plan}
+              onChange={handleChange}
+              required
+              placeholder="اختر أو اكتب نوع الباقة"
+              className="flex-grow outline-none text-gray-700 placeholder-gray-400"
+            />
+            <datalist id="plans">
+              {plans.map((plan, index) => (
+                <option key={index} value={plan} />
+              ))}
+            </datalist>
           </div>
 
           {/* الرسالة */}

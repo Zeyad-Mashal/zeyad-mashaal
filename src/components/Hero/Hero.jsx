@@ -46,16 +46,24 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-wide mb-8 drop-shadow-lg">
+          <h1 className="text-blue-950 text-4xl md:text-6xl font-bold leading-snug tracking-wide mb-6 font-[Cairo]">
             كل الحلول البرمجية في مكان واحد
           </h1>
-          <p className="text-black text-xl max-w-lg mb-12 leading-relaxed mx-auto md:mx-0">
-            نصمم ونطور تطبيقات الهاتف والمواقع الإلكترونية باحترافية لتناسب
-            احتياجاتك التجارية، من البداية حتى الإطلاق.
-          </p>
+
+          <div className="text-gray-700 text-lg max-w-lg mb-10 space-y-4 mx-auto md:mx-0 leading-relaxed">
+            <p>
+              نصمم ونطور تطبيقات الهاتف والمواقع الإلكترونية باحترافية لتناسب
+              احتياجاتك التجارية، من البداية حتى الإطلاق.
+            </p>
+            <p>
+              شركة برمجيات متخصصة تقدم حلول تقنية مبتكرة تساعدك على النمو وتحقيق
+              أهدافك بسرعة وفعالية.
+            </p>
+          </div>
+
           <motion.a
             href="#contact"
-            className="inline-block bg-blue-500 hover:bg-blue-600 active:bg-blue-700 shadow-lg hover:shadow-xl text-white text-lg font-semibold px-10 py-4 rounded-3xl transition-all duration-300"
+            className="inline-block bg-blue-500 hover:bg-blue-600 active:bg-blue-700 shadow-lg hover:shadow-xl text-white text-lg font-semibold px-7 py-3 rounded-3xl transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

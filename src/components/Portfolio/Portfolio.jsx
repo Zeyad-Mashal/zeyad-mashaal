@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import image1 from "../../assets/mira4k.png";
+import image1 from "../../assets/image.png";
 import image2 from "../../assets/mockup.png";
 import image3 from "../../assets/mymind-responsive.png";
 import image4 from "../../assets/pokedex-responsive.png";
@@ -8,7 +8,7 @@ const projects = [
     title: "متجر إلكتروني احترافي",
     description: "منصة بيع منتجات كاملة مع بوابة دفع.",
     image: image1,
-    url: "https://your-store-link.com",
+    url: "https://www.marocares.com/",
     category: "موقع",
   },
   {
@@ -45,7 +45,7 @@ const Portfolio = () => {
       : projects.filter((project) => project.category === activeCategory);
 
   return (
-    <section className="bg-white py-16 px-6 md:px-12" dir="rtl">
+    <section className="bg-white py-16 px-6 md:px-12" dir="rtl" id="portfolio">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">أعمالنا</h2>
         <p className="text-gray-600 text-lg mb-8">
@@ -58,7 +58,7 @@ const Portfolio = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full border transition duration-300 text-base font-medium ${
+              className={`px-4 py-2 rounded-full border transition duration-300 text-base font-medium cursor-pointer ${
                 activeCategory === cat
                   ? "bg-blue-600 text-white border-blue-600"
                   : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50"

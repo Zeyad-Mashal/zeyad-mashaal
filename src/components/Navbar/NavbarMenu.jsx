@@ -9,7 +9,7 @@ const NavbarMenu = () => {
   const navLinks = [
     { name: "الرئيسية", href: "#" },
     { name: "خدماتنا", href: "#services" },
-    { name: "مشاريعنا", href: "#projects" },
+    { name: "مشاريعنا", href: "#portfolio" },
     { name: "تواصل معنا", href: "#contact" },
   ];
 
