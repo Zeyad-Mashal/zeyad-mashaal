@@ -3,4 +3,5 @@
 @source "../.flowbite-react/class-list.json";
 * {
     direction: rtl;
+    scroll-behavior: smooth;
 }
