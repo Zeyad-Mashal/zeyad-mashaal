@@ -101,7 +101,7 @@ const ContactUs = () => {
             />
           </div>
 
-          {/* <div className="flex items-center border border-gray-300 rounded-lg px-4 py-3 focus-within:ring-2 focus-within:ring-blue-500 transition">
+          <div className="flex items-center border border-gray-300 rounded-lg px-4 py-3 focus-within:ring-2 focus-within:ring-blue-500 transition">
             <FaClipboardList className="text-blue-600 ml-3 text-xl" />
             <select
               name="plan"
@@ -119,26 +119,6 @@ const ContactUs = () => {
                 </option>
               ))}
             </select>
-          </div> */}
-
-          {/* اختيار الباقة باستخدام datalist */}
-          <div className="flex items-center border border-gray-300 rounded-lg px-4 py-3 focus-within:ring-2 focus-within:ring-blue-500 transition">
-            <FaClipboardList className="text-blue-600 ml-3 text-xl" />
-            <input
-              type="text"
-              name="plan"
-              list="plans"
-              value={formData.plan}
-              onChange={handleChange}
-              required
-              placeholder="اختر أو اكتب نوع الباقة"
-              className="flex-grow outline-none text-gray-700 placeholder-gray-400"
-            />
-            <datalist id="plans">
-              {plans.map((plan, index) => (
-                <option key={index} value={plan} />
-              ))}
-            </datalist>
           </div>
 
           {/* الرسالة */}
