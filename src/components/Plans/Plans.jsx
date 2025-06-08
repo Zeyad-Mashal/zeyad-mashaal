@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const plansData = [
   {
@@ -107,6 +108,41 @@ const plansData = [
   },
 ];
 
+const PlanCard = ({ plan, index }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.15 }}
+      className="bg-white shadow-lg rounded-xl p-6 flex flex-col justify-between hover:shadow-xl transition"
+    >
+      <div>
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">
+          {plan.name}
+        </h3>
+        <p className="text-blue-600 text-lg font-bold mb-4">{plan.price}</p>
+        <ul className="text-gray-600 mb-6 space-y-2 text-sm">
+          {plan.features.map((feature, i) => (
+            <li key={i}>• {feature}</li>
+          ))}
+        </ul>
+      </div>
+      {plan.contact && (
+        <a
+          href="#contact"
+          className="mt-auto inline-block bg-blue-600 text-white text-center px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+        >
+          تواصل معنا
+        </a>
+      )}
+    </motion.div>
+  );
+};
+
 const Plans = () => {
   return (
     <section className="bg-gray-50 py-16 px-4 md:px-10" dir="rtl">
@@ -118,32 +154,7 @@ const Plans = () => {
             </h2>
             <div className="grid gap-8 md:grid-cols-3">
               {section.items.map((plan, i) => (
-                <div
-                  key={i}
-                  className="bg-white shadow-lg rounded-xl p-6 flex flex-col justify-between hover:shadow-xl transition"
-                >
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      {plan.name}
-                    </h3>
-                    <p className="text-blue-600 text-lg font-bold mb-4">
-                      {plan.price}
-                    </p>
-                    <ul className="text-gray-600 mb-6 space-y-2 text-sm">
-                      {plan.features.map((feature, index) => (
-                        <li key={index}>• {feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  {plan.contact && (
-                    <a
-                      href="#contact"
-                      className="mt-auto inline-block bg-blue-600 text-white text-center px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-                    >
-                      تواصل معنا
-                    </a>
-                  )}
-                </div>
+                <PlanCard key={i} plan={plan} index={i} />
               ))}
             </div>
           </div>

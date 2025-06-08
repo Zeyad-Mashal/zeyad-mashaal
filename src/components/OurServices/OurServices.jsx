@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   FaMobileAlt,
   FaGlobe,
@@ -6,6 +6,40 @@ import {
   FaObjectGroup,
 } from "react-icons/fa";
 import { MdOutlineAnimation } from "react-icons/md";
+import { motion, useInView } from "framer-motion";
+
+const services = [
+  {
+    icon: <FaMobileAlt />,
+    title: "تطوير تطبيقات الهاتف",
+    description:
+      "نصمم ونطور تطبيقات تعمل على أنظمة Android وiOS لتخدم نشاطك التجاري بكفاءة.",
+  },
+  {
+    icon: <FaGlobe />,
+    title: "تصميم وتطوير المواقع",
+    description:
+      "نبني مواقع عصرية وسريعة الاستجابة تعكس هوية شركتك وتُعزز تواجدك الرقمي.",
+  },
+  {
+    icon: <FaObjectGroup />,
+    title: "تصميم واجهات المستخدم (UI/UX)",
+    description:
+      "نصمم تجارب مستخدم سلسة وواجهة أنيقة تضمن تفاعلًا سهلاً وفعالاً مع عملائك.",
+  },
+  {
+    icon: <FaPaintBrush />,
+    title: "الجرافيك ديزاين",
+    description:
+      "نصمم شعارات، منشورات، وهوية بصرية كاملة تبرز علامتك التجارية باحتراف.",
+  },
+  {
+    icon: <MdOutlineAnimation />,
+    title: "موشن جرافيك",
+    description:
+      "نصمم فيديوهات موشن جذابة توصل فكرتك بأسلوب عصري وجذاب يعزز تواصلك مع العملاء.",
+  },
+];
 
 const OurServices = () => {
   return (
@@ -18,75 +52,29 @@ const OurServices = () => {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* تطبيقات الهاتف */}
-          <div className="bg-gray-50 shadow-lg rounded-xl p-8 hover:shadow-xl transition duration-300">
-            <div className="text-blue-600 text-5xl mb-4 flex justify-center">
-              <FaMobileAlt />
-            </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-              تطوير تطبيقات الهاتف
-            </h3>
-            <p className="text-gray-600">
-              نصمم ونطور تطبيقات تعمل على أنظمة Android وiOS لتخدم نشاطك التجاري
-              بكفاءة.
-            </p>
-          </div>
+          {services.map((service, index) => {
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true });
 
-          {/* تصميم المواقع */}
-          <div className="bg-gray-50 shadow-lg rounded-xl p-8 hover:shadow-xl transition duration-300">
-            <div className="text-blue-600 text-5xl mb-4 flex justify-center">
-              <FaGlobe />
-            </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-              تصميم وتطوير المواقع
-            </h3>
-            <p className="text-gray-600">
-              نبني مواقع عصرية وسريعة الاستجابة تعكس هوية شركتك وتُعزز تواجدك
-              الرقمي.
-            </p>
-          </div>
-
-          {/* UI/UX */}
-          <div className="bg-gray-50 shadow-lg rounded-xl p-8 hover:shadow-xl transition duration-300">
-            <div className="text-blue-600 text-5xl mb-4 flex justify-center">
-              <FaObjectGroup />
-            </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-              تصميم واجهات المستخدم (UI/UX)
-            </h3>
-            <p className="text-gray-600">
-              نصمم تجارب مستخدم سلسة وواجهة أنيقة تضمن تفاعلًا سهلاً وفعالاً مع
-              عملائك.
-            </p>
-          </div>
-
-          {/* جرافيك ديزاين */}
-          <div className="bg-gray-50 shadow-lg rounded-xl p-8 hover:shadow-xl transition duration-300">
-            <div className="text-blue-600 text-5xl mb-4 flex justify-center">
-              <FaPaintBrush />
-            </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-              الجرافيك ديزاين
-            </h3>
-            <p className="text-gray-600">
-              نصمم شعارات، منشورات، وهوية بصرية كاملة تبرز علامتك التجارية
-              باحتراف.
-            </p>
-          </div>
-
-          {/* موشن جرافيك */}
-          <div className="bg-gray-50 shadow-lg rounded-xl p-8 hover:shadow-xl transition duration-300">
-            <div className="text-blue-600 text-5xl mb-4 flex justify-center">
-              <MdOutlineAnimation />
-            </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-              موشن جرافيك
-            </h3>
-            <p className="text-gray-600">
-              نصمم فيديوهات موشن جذابة توصل فكرتك بأسلوب عصري وجذاب يعزز تواصلك
-              مع العملاء.
-            </p>
-          </div>
+            return (
+              <motion.div
+                key={index}
+                ref={ref}
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="bg-gray-50 shadow-lg rounded-xl p-8 hover:shadow-xl transition duration-300"
+              >
+                <div className="text-blue-600 text-5xl mb-4 flex justify-center">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600">{service.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

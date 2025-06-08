@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   FaUser,
   FaPhone,
@@ -48,7 +49,15 @@ const ContactUs = () => {
         <h2 className="text-4xl font-extrabold text-gray-900 mb-10 text-center">
           تواصل معنا
         </h2>
-        <form onSubmit={handleSubmit} className="space-y-8">
+
+        {/* نلف الفورم داخل motion.div */}
+        <motion.form
+          onSubmit={handleSubmit}
+          className="space-y-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           {/* الاسم */}
           <div className="flex items-center border border-gray-300 rounded-lg px-4 py-3 focus-within:ring-2 focus-within:ring-blue-500 transition">
             <FaUser className="text-blue-600 ml-3 text-xl" />
@@ -135,7 +144,7 @@ const ContactUs = () => {
               إرسال الرسالة
             </button>
           </div>
-        </form>
+        </motion.form>
       </div>
     </section>
   );

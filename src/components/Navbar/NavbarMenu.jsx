@@ -10,7 +10,6 @@ const NavbarMenu = () => {
     { name: "الرئيسية", href: "#" },
     { name: "خدماتنا", href: "#services" },
     { name: "مشاريعنا", href: "#projects" },
-    { name: "فريق العمل", href: "#team" },
     { name: "تواصل معنا", href: "#contact" },
   ];
 
@@ -66,7 +65,7 @@ const NavbarMenu = () => {
                 <a
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block hover:text-blue-400 transition-colors duration-300"
+                  className=" block hover:text-blue-400 transition-colors duration-300"
                 >
                   {link.name}
                 </a>

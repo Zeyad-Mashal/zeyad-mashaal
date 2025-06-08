@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import earth from "../../assets/earth.mp4";
 
 const Hero = () => {
@@ -22,10 +23,14 @@ const Hero = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto flex flex-col-reverse md:flex-row-reverse items-center justify-center md:justify-between gap-16">
-        <div className="w-full md:w-1/2 flex justify-center">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           <video
             src={earth}
-            alt="تطوير التطبيقات والمواقع"
             loop
             autoPlay
             muted
@@ -33,9 +38,14 @@ const Hero = () => {
             preload="auto"
             className="max-w-full h-auto object-cover md:object-contain border-none"
           />
-        </div>
+        </motion.div>
 
-        <div className="w-full md:w-1/2 text-center md:text-right">
+        <motion.div
+          className="w-full md:w-1/2 text-center md:text-right"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-wide mb-8 drop-shadow-lg">
             كل الحلول البرمجية في مكان واحد
           </h1>
@@ -43,13 +53,15 @@ const Hero = () => {
             نصمم ونطور تطبيقات الهاتف والمواقع الإلكترونية باحترافية لتناسب
             احتياجاتك التجارية، من البداية حتى الإطلاق.
           </p>
-          <a
+          <motion.a
             href="#contact"
             className="inline-block bg-blue-500 hover:bg-blue-600 active:bg-blue-700 shadow-lg hover:shadow-xl text-white text-lg font-semibold px-10 py-4 rounded-3xl transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             تواصل معنا الآن
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
